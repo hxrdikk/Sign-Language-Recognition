@@ -79,8 +79,6 @@ With high accuracy on training and validation, the model can recognize ASL gestu
 
         | Sign | Prediction |
         |------|------------|
-        | ![A](Results/A.png) | **A** |
-        | ![B](Results/B.png) | **B** |
         | ![C](Results/C.png) | **C** |
         | ![D](Results/D.png) | **D** |
 
