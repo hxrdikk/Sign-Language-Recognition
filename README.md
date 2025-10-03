@@ -87,27 +87,27 @@ With high accuracy on training and validation, the model can recognize ASL gestu
 <!-- ~installation & usage -->
 <h3 align="left"> ⚙️ Installation & Usage:</h3>
 
-### 1. Clone the Repository
+1. Clone the Repository
 ```bash
 git clone https://github.com/hxrdikk/Sign-Language-Recognition.git
 cd Sign-Language-Recognition
 ```
 
-### 2. Install Dependencies
+2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Download Pretrained Model
+3. Download Pretrained Model
 The trained model (SLR_final.h5) is too large for GitHub.  
 👉 Download `SLR_final.h5` from [Google Drive](https://drive.google.com/drive/folders/1rzfvnuyjBEmngFbhcIPVcTDhJ1RDGN7A?usp=drive_link) and place it in the project root.
 
-### 4. Run Notebook
+4. Run Notebook
 ```bash
 jupyter notebook SignLanguageRecognition.ipynb
 ```
 
-### 5. Live Prediction via Webcam
+5. Live Prediction via Webcam
 ```bash
 python model_load.py
 ```
