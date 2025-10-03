@@ -1,62 +1,91 @@
-# ✋ Sign Language Recognition using CNN
+<!-- ~welcome note -->
+<p align="center">
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Hello+there!;Welcome+to+my+Project!" />
+</p>
 
-This project implements an American Sign Language (ASL) recognition system using a **Convolutional Neural Network (CNN)**.  
-It predicts hand gestures representing alphabets and supports real-time webcam recognition.
+<div style="margin-top:12px;"></div> 
 
----
+<!-- ~about project -->
+<h3 align="left"> ✨ About the project:</h3>
 
-## 📂 Dataset
-- **Source:** [ASL Alphabet Dataset - Kaggle](https://www.kaggle.com/datasets/grassknoted/asl-alphabet)  
-- Contains **87,000+ images** of hand signs across **29 classes** (A–Z, SPACE, DELETE, NOTHING).  
-- Images resized to **64×64 RGB** before training.
+<div style="margin-top:12px;"></div> 
 
----
+- Sign Language Recognition using CNN is a deep learning project that aims to bridge the communication gap between hearing-impaired individuals and others. It uses a Convolutional Neural Network (CNN) to recognize American Sign Language (ASL) hand gestures and predict the corresponding alphabet in real time.
 
-## 🧠 Model
-- **Architecture:** Custom CNN (Convolutional Neural Network)  
-- **Input size:** 64 × 64 × 3  
-- **Output classes:** 29 (A–Z + special tokens)  
-- **Optimizer:** Adam  
-- **Loss Function:** Categorical Crossentropy  
+- The system is trained on the ASL Alphabet Dataset, which contains over 87,000 labeled images across 29 classes (A–Z, SPACE, DELETE, NOTHING).
+With high accuracy on training and validation, the model can recognize ASL gestures from static images and even from a live webcam feed using OpenCV.
 
-The trained model is saved as `SLR_final.h5`.  
+- This project demonstrates how deep learning can be applied to assistive technology, making communication more inclusive and accessible.
+
+<!-- ~dataset -->
+<h3 align="left"> 📂 DataSet:</h3>
+
+- The project uses the American Sign Language [ASL Alphabet Dataset from Kaggle](https://www.kaggle.com/datasets/grassknoted/asl-alphabet).
+
+- Key Details:
+
+  - Total Images: ~87,000  
+  - Classes: 29 (A–Z alphabets + SPACE, DELETE, NOTHING)  
+  - Image Size: Original 200×200 RGB, resized to 64×64 RGB for training efficiency  
+  - Training/Validation Split:  
+    - Training set: ~70%  
+    - Validation set: ~20%  
+
+<!-- ~model -->
+<h3 align="left"> 🧠 Model:</h3>
+
+- The project uses a Custom Convolutional Neural Network (CNN) designed specifically for American Sign Language recognition.
+  
+    - Input Size: 64 × 64 × 3 (resized RGB images)
+    - Output Classes: 29 (A–Z + SPACE, DELETE, NOTHING)
+    - Optimizer: Adam
+    - Loss Function: Categorical Crossentropy
+    - Activation Functions: ReLU (hidden layers), Softmax (output layer)
+    - Regularization: Dropout layers to prevent overfitting
+
+- Training
+  
+    - Epochs: 15–25 (tuned)
+    - Batch Size: 64
+    - Callbacks: Early stopping & Model checkpointing
+    - Data Augmentation: Rotation, zoom, horizontal flip, shear
+    - The final trained model is saved as SLR_final.h5.
 
 ⚠️ The model file is too large for GitHub (>100 MB).  
-👉 Download it here: [Google Drive Link](https://drive.google.com/drive/folders/1JjK75ni5MON4727yQDLzLVElz4cRE7QY?usp=sharing)
+👉 Download it here: [Google Drive Link](https://drive.google.com/drive/folders/1rzfvnuyjBEmngFbhcIPVcTDhJ1RDGN7A?usp=drive_link)
 
----
+<!-- ~result -->
+<h3 align="left"> 📊 Results:</h3>
 
-## 📊 Results
+- The custom CNN model was trained on the ASL Alphabet Dataset and achieved high accuracy across training, validation, and testing.
 
-### ✅ Accuracy
-- **Training Accuracy:** 98.86%  
-- **Validation Accuracy:** 95.89%  
-- **Test Accuracy (Augmented):** 95.29%  
+- Model Performance
+  
+    - Training Accuracy: 98.86%
+    - Validation Accuracy: 95.89%
+    - Test Accuracy (with data augmentation): 95.29%
+  
+- These results indicate that the model generalizes well and avoids significant overfitting.
 
-### ✅ Confusion Matrix
-The confusion matrix shows the model’s performance across different classes:
+- Confusion Matrix:
+  
+    - The confusion matrix illustrates how well the model distinguishes between different ASL signs:
 
-![Confusion Matrix](Results/Confusion%20Matrix.png)
+ ![Confusion Matrix](Results/Confusion%20Matrix.png)
 
+- Sample Predictions
 
----
+    - Here are some example outputs from the trained model:
 
-## 🎯 Sample Predictions
+        | Sign | Prediction |
+        |------|------------|
+        | ![A](Results/A.png) | **A** |
+        | ![B](Results/B.png) | **B** |
+        | ![C](Results/C.png) | **C** |
+        | ![D](Results/D.png) | **D** |
 
-Here are some example outputs from the trained model:
-
-| Sign | Prediction |
-|------|------------|
-| ![A](Results/A.png) | **A** |
-| ![B](Results/B.png) | **B** |
-| ![C](Results/C.png) | **C** |
-| ![D](Results/D.png) | **D** |
-| ![E](Results/E.png) | **E** |
-| ![F](Results/F.png) | **F** |
-
----
-
-## ⚙️ Installation & Usage
+<!-- ~installation & usage -->
+<h3 align="left"> ⚙️ Installation & Usage:</h3>
 
 ### 1. Clone the Repository
 ```bash
@@ -70,8 +99,8 @@ pip install -r requirements.txt
 ```
 
 ### 3. Download Pretrained Model
-Download `SLR_final.h5` from [Google Drive](https://drive.google.com/drive/folders/1JjK75ni5MON4727yQDLzLVElz4cRE7QY?usp=sharing)  
-and place it in the **project root**.
+The trained model (SLR_final.h5) is too large for GitHub.  
+👉 Download `SLR_final.h5` from [Google Drive](https://drive.google.com/drive/folders/1rzfvnuyjBEmngFbhcIPVcTDhJ1RDGN7A?usp=drive_link) and place it in the project root.
 
 ### 4. Run Notebook
 ```bash
@@ -83,40 +112,48 @@ jupyter notebook SignLanguageRecognition.ipynb
 python model_load.py
 ```
 
----
+<!-- ~project structure -->
+<h3 align="left"> 🏗 Project Structure:</h3>
 
-## 🏗 Project Structure
 ```
 Sign-Language-Recognition/
-├── Results/
+├── Results/                       # Folder containing result images (predictions & confusion matrix)
 │   ├── A.png
 │   ├── B.png
 │   ├── C.png
 │   ├── D.png
 │   ├── E.png
 │   ├── F.png
-│   └── Confusion_Matrix.png
-├── model_load.py
-├── test_Data_Split.py
-├── requirements.txt
-├── SignLanguageRecognition.ipynb
-└── .gitignore
+│   └── Confusion Matrix.png
+│
+├── app.py                         # (Optional) Gradio app for interactive UI
+├── background.jpg                 # Background image (used in app.py / UI)
+├── banner.png                     # Banner image (used in README or app UI)
+├── model_load.py                  # Script for loading model & real-time webcam predictions
+├── test_Data_Split.py             # Utility script for dataset splitting
+├── requirements.txt               # Dependencies with pinned versions
+├── SignLanguageRecognition.ipynb  # Jupyter notebook for training & evaluation
+├── LICENSE                        # Open-source license (MIT)
+├── README.md                      # Project documentation
+└── .gitignore                     # Git ignore rules (venv, dataset, etc.)
+
 ```
 
----
+<!-- ~features -->
+<h3 align="left"> 🏆 Features:</h3>
 
-## 🏆 Features
 - ASL alphabet recognition (A–Z + SPACE, DELETE, NOTHING)  
 - Custom CNN architecture  
 - Confusion matrix + classification report  
 - Real-time webcam prediction with OpenCV  
 - Dataset splitting script (`test_Data_Split.py`)  
 
----
+<!-- ~author -->
+<h3 align="left"> 👨‍💻 Author:</h3>
 
-## 👨‍💻 Authors
-- **Hardik Jain**  
----
+- Hardik Jain
 
-## 📜 License
-This project is open-source and available under the [MIT License](LICENSE).
+<!-- ~license -->
+<h3 align="left"> 📜 License:</h3>
+
+- This project is open-source and available under the [MIT License](LICENSE).
