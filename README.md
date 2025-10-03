@@ -5,8 +5,8 @@
 
 <div style="margin-top:12px;"></div> 
 
-<!-- ~about project -->
-<h3 align="left"> ✨ About the project:</h3>
+<!-- ~about this project -->
+<h3 align="left"> ✨ About this project:</h3>
 
 <div style="margin-top:12px;"></div> 
 
@@ -27,7 +27,8 @@ With high accuracy on training and validation, the model can recognize ASL gestu
   - Total Images: ~87,000  
   - Classes: 29 (A–Z alphabets + SPACE, DELETE, NOTHING)  
   - Image Size: Original 200×200 RGB, resized to 64×64 RGB for training efficiency  
-  - Training/Validation Split:  
+  - Training/Validation Split:
+    
     - Training set: ~70%  
     - Validation set: ~20%  
 
@@ -110,18 +111,26 @@ jupyter notebook SignLanguageRecognition.ipynb
 python model_load.py
 ```
 
+<!-- ~deployment -->
+<h3 align="left"> 🚀 Deployment:</h3>
+
+~ Sign Language Recognition (ASL) is currently deployed on Hugging Face → [Live on Hugging Face Spaces](https://huggingface.co/spaces/hxrdikkk/sign-language-recognition)
+
+- Deploy your own instance:
+  
+    - Push your code to GitHub
+    - Go to Hugging Face Spaces and create a new Gradio Space 
+    - Select your repo and connect it to the Space
+    - Deploy 
+
 <!-- ~project structure -->
 <h3 align="left"> 🏗 Project Structure:</h3>
 
 ```
 Sign-Language-Recognition/
 ├── Results/                       # Folder containing result images (predictions & confusion matrix)
-│   ├── A.png
-│   ├── B.png
 │   ├── C.png
 │   ├── D.png
-│   ├── E.png
-│   ├── F.png
 │   └── Confusion Matrix.png
 │
 ├── app.py                         # (Optional) Gradio app for interactive UI
