@@ -1,0 +1,12 @@
+# macOS / Python
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# project artifacts
+Results/
+SLR_final.h5
+*.h5 
+Dataset/
